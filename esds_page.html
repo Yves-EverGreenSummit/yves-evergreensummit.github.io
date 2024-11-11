@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EverGreen Summit Data Solutions</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Custom theme styles */
         body {
@@ -22,7 +22,7 @@
             background-color: #006400; /* Dark green for contrast */
             color: #006400; /* Dark green for contrast */
         }
-        h1 {
+        h1, h3 {
             color: #FFFFFF; /* White for titles */
         }
         h2, h5 {
@@ -43,21 +43,28 @@
         .btn-primary:hover {
             background-color: #1E90FF; /* Dodger blue on hover */
         }
-
+        /* Hero Section Styles */
+        .hero-section {
+            padding-top: 50px;  /* Increase padding at the top */
+            padding-bottom: 50px;  /* Increase padding at the bottom */
+            background-color: #004d00;  /* Dark green background to match the theme */
+        }
+        .company-name {
+            font-weight: bold;  /* Making the company name bold */
+            color: #FFFFFF;  /* Optional: Gold color for better emphasis */
+        }
+        .slogan {
+            font-style: italic;  /* Optional: Italicize the slogan for emphasis */
+        }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <!-- <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">EverGreen Summit Data Solutions</a>
-    </nav> -->
-
     <!-- Hero Section -->
-    <header class="jumbotron jumbotron-fluid text-center">
+    <header class="jumbotron jumbotron-fluid text-center hero-section">
         <div class="container">
-            <h1 class="display-4">Welcome to EverGreen Summit Data Solutions</h1>
+            <h3 class="display-6">Welcome to</h3>
+            <h1 class="display-4 company-name"><strong>EverGreen Summit Data Solutions</strong></h1>
             <p class="lead text-white">Helping SMEs improve energy management and ESG reporting with modular solutions.</p>
-            <a href="#services" class="btn btn-primary btn-lg">Learn More</a>
         </div>
     </header>
 
@@ -65,7 +72,7 @@
     <section id="about" class="container my-5">
         <div class="row">
             <div class="col-md-8 mx-auto text-center">
-                <h2>About Me</h2>
+                <h2>About</h2>
                 <p>I’m Yves Deutschmann, founder of EverGreen Summit Data Solutions, and I specialize in helping small and midsize manufacturers take their first steps towards energy efficiency and ESG compliance. Unlike traditional solutions, I offer a highly flexible approach that doesn’t require large initial investments. I implement practical systems that quickly demonstrate value and adapt to grow alongside my clients’ businesses.</p>
                 <p>What sets me apart is my 15+ years of hands-on experience in both energy management and software implementation. I don’t just provide tools; I offer expertise that integrates seamlessly with whatever systems a company already has in place, focusing on achievable actions that make an immediate impact. This approach is particularly valuable for SMEs that can’t afford full-time energy management personnel but still want to improve efficiency and comply with ESG standards.</p>
             </div>
@@ -79,47 +86,126 @@
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h5 class="card-title text-center">ESG Compliance Reporting</h5>
-                        <p class="card-text text-center">Automate reporting to align with GRI, CDP, and SASB standards and attract opportunities with OEMs.</p>
+                        <h5 class="card-title text-center">Streamlined ESG Compliance for Business Growth</h5>
+                        <p class="card-text text-center">Automate ESG reporting to align with industry standards, reduce administrative burden, and open doors to new business opportunities.</p>
+                        <!-- Button to Open Modal -->
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#esgModal">
+                                Learn More
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Energy Audits</h5>
-                        <p class="card-text text-center">Identify inefficiencies in energy usage across facilities, lowering costs and enhancing sustainability.</p>
+                        <h5 class="card-title text-center">Tailored Energy Optimization for Your Business</h5>
+                        <p class="card-text text-center">Targeted energy savings through a strategic, data-driven approach, ensuring continuous improvement and maximum impact.</p>
+                        <!-- Button to Open Modal -->
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#energyModal">
+                                Learn More
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Modular Solutions</h5>
-                        <p class="card-text text-center">Flexible and scalable integration for data collection, processing, and compliance reporting.</p>
+                        <h5 class="card-title text-center">Customizable Solutions That Grow With You</h5>
+                        <p class="card-text text-center">Flexible integration to match your unique journey—whether starting small or scaling up, our solutions fit your needs.</p>
+                        <!-- Button to Open Modal -->
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#customizingModal">
+                                Learn More
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ESG Modal -->
+    <div class="modal fade" id="esgModal" tabindex="-1" aria-labelledby="esgModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="esgModalLabel">How It Works</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Assess:</strong> We start by understanding your existing ESG data, identifying the gaps, and determining what’s needed to comply with standards like GRI, CDP, and SASB.</p>
+                    <p><strong>Automate:</strong> Set up automated data collection and reporting systems that ensure your ESG efforts are captured accurately and efficiently.</p>
+                    <p><strong>Report:</strong> Generate compliance reports that meet the necessary standards, reducing the time and complexity of managing ESG disclosures.</p>
+                    <p><strong>Attract:</strong> Use your compliance to enhance your standing with OEMs and other partners, leveraging sustainability reporting as a key differentiator in the market.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- EM Modal -->
+    <div class="modal fade" id="energyModal" tabindex="-1" aria-labelledby="energyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="energyModalLabel">How It Works</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Plan:</strong> We assess your current energy consumption, identify key areas that drive most of your usage, and create a tailored action plan to reduce costs.</p>
+                    <p><strong>Do:</strong> Implement smart solutions like energy-efficient measures and monitoring to address those high-impact areas.</p>
+                    <p><strong>Check:</strong> Reconnect after a set period to measure results, ensuring we're meeting our goals.</p>
+                    <p><strong>Act:</strong> Adjust the plan together based on results, continually improving for greater efficiency.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Customizing Modal -->
+    <div class="modal fade" id="customizingModal" tabindex="-1" aria-labelledby="customizingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="customizingModalLabel">How It Works</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Meet You Where You Are:</strong> Whether you're using pen & paper or sophisticated databases, we start from your current setup. No need to overhaul everything—our modular approach ensures we build on what you have.</p>
+                    <p><strong>Just Starting?</strong> Soon, you'll be able to use our <strong>Energy Management Light tool</strong> as an easy entry point into digital energy management.</p>
+                    <p><strong>Scalable Integration:</strong> Your systems evolve, and so do our solutions. Start small and add on as your needs grow—whether it’s more advanced reporting, compliance management, or integrating new data sources.</p>
+                    <p><strong>Continuous Improvement:</strong> We don't just implement and leave; we help optimize your systems as they grow. From initial implementation to advanced ESG reporting, our modular components evolve with your requirements.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Call to Action Section -->
     <section id="cta" class="text-center bg-dark text-white py-5">
         <div class="container">
             <h2 class="text-white">Ready to Improve Your ESG and Energy Management?</h2>
-            <p class="lead">Schedule a free consultation today to discuss your goals and how we can help you achieve them.</p>
+            <p class="lead text-white">Schedule a free consultation today to discuss your goals and how I can help you achieve them.</p>
             <a href="https://calendly.com/yves-deutschmann/30min" class="btn btn-primary btn-lg">Schedule a Consultation</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer py-4 text-center">
+    <footer class="footer py-1 text-center">
         <p>&copy; 2024 EverGreen Summit Data Solutions. All rights reserved.</p>
     </footer>
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
