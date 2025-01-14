@@ -56,6 +56,36 @@
         .slogan {
             font-style: italic;  /* Optional: Italicize the slogan for emphasis */
         }
+        .card-title {
+            color: #1E90FF; /* Dodger blue for client names */
+            font-size: 1.1rem; /* Slightly larger for emphasis */
+        }
+        .card-subtitle {
+            font-size: 0.85rem; /* Smaller text for position and company */
+            color: #6c757d; /* Muted gray */
+            margin-top: 3px; /* Space between name and subtitle */
+            font-weight: bold; /* Bold for emphasis */
+        }
+        .card-text {
+            text-align: justify; /* Align longer text blocks for better readability */
+            font-size: 1rem; /* Ensure readability */
+            padding-left: 10px; /* Add padding for better spacing */ 
+            padding-right: 10px; /* Add padding for better spacing */
+            padding-top: 5px; /* Add padding at the top of the text */ 
+            padding-bottom: 5px; /* Add padding at the bottom of the text */
+        }
+        .card-text + .card-text {
+            margin-top: 0px; /* Adjust this value to control the spacing between consecutive card-text elements */
+            padding-top: 0px;
+            
+        }
+        .card-text br {
+            margin-top: 1rem; /* Add spacing above the line break */
+            display: block;   /* Ensure it acts like a block-level element */
+            content: '';      /* Ensures spacing even if no visible text */
+        }
+
+
     </style>
 </head>
 <body>
@@ -86,8 +116,8 @@
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Streamlined ESG Compliance for Business Growth</h5>
-                        <p class="card-text text-center">Automate ESG reporting to align with industry standards, reduce administrative burden, and open doors to new business opportunities.</p>
+                        <h5 class="card-title text-center">ESG Compliance for Business Growth</h5>
+                        <p class="card-text text-center">Automate ESG reporting to align with industry standards and open doors to new business opportunities.</p>
                         <!-- Button to Open Modal -->
                         <div class="text-center">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#esgModal">
@@ -115,7 +145,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h5 class="card-title text-center">Customizable Solutions That Grow With You</h5>
-                        <p class="card-text text-center">Flexible integration to match your unique journey—whether starting small or scaling up, our solutions fit your needs.</p>
+                        <p class="card-text text-center">Flexible integration to match your unique journey - whether starting small or scaling up, our solutions fit your needs.</p>
                         <!-- Button to Open Modal -->
                         <div class="text-center">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#customizingModal">
@@ -194,13 +224,62 @@
         <div class="container">
             <h2 class="text-white">Ready to Improve Your ESG and Energy Management?</h2>
             <p class="lead text-white">Schedule a free consultation today to discuss your goals and how I can help you achieve them.</p>
-            <a href="https://calendly.com/yves-deutschmann/30min" class="btn btn-primary btn-lg">Schedule a Consultation</a>
+            <a href="https://calendly.com/yves-deutschmann-evergreensummitds/30min" class="btn btn-primary btn-lg">Schedule a free Consultation</a>
         </div>
     </section>
 
+    <!-- Testimonial Section -->
+    <section id="testimonials" class="container my-5">
+        <h2 class="text-center">What Clients Say</h2>
+        <div id="testimonial-container" class="row justify-content-center"></div>
+    </section>
+    
+    <script>
+        const BASE_URL = "https://evergreensummitds.com/";
+        fetch(`${BASE_URL}testimonials.json`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json(); 
+            })
+            .then(testimonials => {
+                const container = document.getElementById('testimonial-container');
+                testimonials.forEach(({ text, name, position, company }) => {
+                    fetch(`${BASE_URL}${text}`)
+                        .then(fileResponse => {
+                            if (!fileResponse.ok) {
+                                throw new Error(`HTTP error! status: ${fileResponse.status}`);
+                            }
+                            return fileResponse.text(); 
+                        })
+                        .then(content => {
+                            // Replace line breaks (\n) with <br> tags
+                            const formattedContent = content.replace(/\n/g, '<br>');
+
+                            container.innerHTML += `
+                                <div class="col-md-4">
+                                    <div class="card text-center mb-4">
+                                        <div class="card-body">
+                                            <p class="card-text">${formattedContent}</p>
+                                            <h5 class="card-title">${name}</h5>
+                                            <p class="card-subtitle text-muted">${position}</p>
+                                            <p class="card-subtitle text-muted">${company}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        })
+                        .catch(error => console.error(`Error fetching testimonial text: ${error}`));
+                });
+            })
+            .catch(error => console.error(`Error fetching JSON: ${error}`));
+    </script>
+    
+
     <!-- Footer -->
     <footer class="footer py-1 text-center">
-        <p>&copy; 2024 EverGreen Summit Data Solutions. All rights reserved.</p>
+        <p>&copy; 2025 EverGreen Summit Data Solutions. All rights reserved.</p>
     </footer>
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
