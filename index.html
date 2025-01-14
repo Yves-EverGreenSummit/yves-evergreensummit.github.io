@@ -84,8 +84,6 @@
             display: block;   /* Ensure it acts like a block-level element */
             content: '';      /* Ensures spacing even if no visible text */
         }
-
-
     </style>
 </head>
 <body>
@@ -276,10 +274,9 @@
             .catch(error => console.error(`Error fetching JSON: ${error}`));
     </script>
     
-
     <!-- Footer -->
     <footer class="footer py-1 text-center">
-        <p>&copy; 2025 EverGreen Summit Data Solutions. All rights reserved.</p>
+        <p>&copy; <script>document.write(new Date().getFullYear());</script> EverGreen Summit Data Solutions. All rights reserved.</p>
     </footer>
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
