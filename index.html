@@ -84,154 +84,140 @@
             display: block;   /* Ensure it acts like a block-level element */
             content: '';      /* Ensures spacing even if no visible text */
         }
+        .faq-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .faq-question {
+            background-color: #E0E0E0; /* Dodger blue */
+            color: #064E3B;
+            padding: 15px;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 18px;
+            outline: none;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            background-color: #F0F0F0; /* Light grey */
+            color: #333; /* Ensure visible text */
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: max-height 0.3s ease-out;
+        }
+        .active {
+            background-color: #006400; /* Dark green when expanded */
+            color: #FFFFFF; /* White text when expanded */
+        }
+        .challenges-solutions {
+            display: grid;
+            grid-template-columns: auto 20px auto; /* Equal widths for text columns */
+            align-items: center;
+            gap: 10px; /* Adjust spacing */
+            max-width: 800px; /* Ensures alignment within a fixed container */
+            margin: 0 auto; /* Centers the section */
+        }
+        .arrow {
+            width: 20px; /* Reduce width */
+            text-align: center; /* Keep the arrow centered */
+        }
+        .challenges, .solutions {
+            text-align: left; /* Ensures both text blocks align properly */
+        }
+        .cta-section {
+            background-color: #E0E0E0; /* Soft muted light gray */
+            color: #064E3B; /* Dark green for readability */
+            text-align: center;
+            padding: 40px 20px; /* Adequate spacing */
+            border-radius: 8px;
+            margin: 20px auto;
+        }
+
+        .cta-section h2, .cta-section p {
+            font-size: 22px;
+            margin-bottom: 30px; /* More space above the button */
+        }
+
+        .cta-button {
+            background-color: #1E7D33; /* Deep green to stay on brand */
+            color: white;
+            padding: 16px 32px;
+            font-size: 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            background-color: #145A32; /* Darker green on hover */
+        }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
     <header class="jumbotron jumbotron-fluid text-center hero-section">
         <div class="container">
-            <h3 class="display-6">Welcome to</h3>
-            <h1 class="display-4 company-name"><strong>EverGreen Summit Data Solutions</strong></h1>
-            <p class="lead text-white">Helping SMEs improve energy management and ESG reporting with modular solutions.</p>
+            <h1 class="display-4 company-name">
+                <strong>
+                    Cut Energy Costs & Simplify ESG Compliance - Without Large Investments
+                </strong>
+            </h1>
+            <p class="lead text-white">
+                Helping manufacturing SMEs lower energy costs and meet ESG standards with modular, data-driven solutions. 
+                Scalable solutions tailored to your needs—no expensive software required.
+            </p>
         </div>
     </header>
 
-    <!-- Introduction Section -->
-    <section id="about" class="container my-5">
+    <!-- Call to Action Section -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <h2>Curious about reducing energy costs and simplifying ESG compliance? Let’s chat!</h2>
+            <p>Our solutions fit any budget—scalable, modular, and no need for costly software.</p>
+            <a href="https://calendly.com/yves-deutschmann-evergreensummitds/30min" class="cta-button">Schedule a free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Authority & Credibility Section -->
+    <section id="bio" class="container my-5">
         <div class="row">
             <div class="col-md-8 mx-auto text-center">
-                <h2>About</h2>
-                <p>I’m Yves Deutschmann, founder of EverGreen Summit Data Solutions, and I specialize in helping small and midsize manufacturers take their first steps towards energy efficiency and ESG compliance. Unlike traditional solutions, I offer a highly flexible approach that doesn’t require large initial investments. I implement practical systems that quickly demonstrate value and adapt to grow alongside my clients’ businesses.</p>
-                <p>What sets me apart is my 15+ years of hands-on experience in both energy management and software implementation. I don’t just provide tools; I offer expertise that integrates seamlessly with whatever systems a company already has in place, focusing on achievable actions that make an immediate impact. This approach is particularly valuable for SMEs that can’t afford full-time energy management personnel but still want to improve efficiency and comply with ESG standards.</p>
+                <h2>Why Work With Me?</h2>
+                <p>
+                    I’m Yves Deutschmann, founder of EverGreen Summit Data Solutions, 
+                    with 15+ years of hands-on experience in both energy management and software implementation. 
+                    Unlike traditional solutions, I provide modular, scalable systems that deliver 
+                    results—without requiring expensive software or full-time staff.
+                </p>
             </div>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="container my-5">
-        <h2 class="text-center">Services</h2>
         <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">ESG Compliance for Business Growth</h5>
-                        <p class="card-text text-center">Automate ESG reporting to align with industry standards and open doors to new business opportunities.</p>
-                        <!-- Button to Open Modal -->
-                        <div class="text-center">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#esgModal">
-                                Learn More
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-8 mx-auto text-center">
+                <h2>What Clients Say</h2>
+                <p>
+                    Before founding EverGreen Summit Data Solutions, I worked on data integration and cost analysis projects for manufacturers 
+                    such as Porsche, Renault, TI Fluid Systems, and Litens Automotive, 
+                    as well as industrial leaders like Fronius, Vibracoustic, and MOBA, during my time at FACTON. 
+                    My experience in streamlining cost management and operational efficiency now helps SMEs take the first steps toward energy efficiency and ESG compliance.
+                </p>
+                <p>Here's what some of my clients have to say about my work:</p>
             </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Tailored Energy Optimization for Your Business</h5>
-                        <p class="card-text text-center">Targeted energy savings through a strategic, data-driven approach, ensuring continuous improvement and maximum impact.</p>
-                        <!-- Button to Open Modal -->
-                        <div class="text-center">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#energyModal">
-                                Learn More
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Customizable Solutions That Grow With You</h5>
-                        <p class="card-text text-center">Flexible integration to match your unique journey - whether starting small or scaling up, our solutions fit your needs.</p>
-                        <!-- Button to Open Modal -->
-                        <div class="text-center">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#customizingModal">
-                                Learn More
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="row">
+            <div id="testimonial-container" class="row justify-content-center"></div>
         </div>
     </section>
 
-    <!-- ESG Modal -->
-    <div class="modal fade" id="esgModal" tabindex="-1" aria-labelledby="esgModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="esgModalLabel">How It Works</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Assess:</strong> We start by understanding your existing ESG data, identifying the gaps, and determining what’s needed to comply with standards like GRI, CDP, and SASB.</p>
-                    <p><strong>Automate:</strong> Set up automated data collection and reporting systems that ensure your ESG efforts are captured accurately and efficiently.</p>
-                    <p><strong>Report:</strong> Generate compliance reports that meet the necessary standards, reducing the time and complexity of managing ESG disclosures.</p>
-                    <p><strong>Attract:</strong> Use your compliance to enhance your standing with OEMs and other partners, leveraging sustainability reporting as a key differentiator in the market.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- EM Modal -->
-    <div class="modal fade" id="energyModal" tabindex="-1" aria-labelledby="energyModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="energyModalLabel">How It Works</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Plan:</strong> We assess your current energy consumption, identify key areas that drive most of your usage, and create a tailored action plan to reduce costs.</p>
-                    <p><strong>Do:</strong> Implement smart solutions like energy-efficient measures and monitoring to address those high-impact areas.</p>
-                    <p><strong>Check:</strong> Reconnect after a set period to measure results, ensuring we're meeting our goals.</p>
-                    <p><strong>Act:</strong> Adjust the plan together based on results, continually improving for greater efficiency.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Customizing Modal -->
-    <div class="modal fade" id="customizingModal" tabindex="-1" aria-labelledby="customizingModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="customizingModalLabel">How It Works</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Meet You Where You Are:</strong> Whether you're using pen & paper or sophisticated databases, we start from your current setup. No need to overhaul everything—our modular approach ensures we build on what you have.</p>
-                    <p><strong>Just Starting?</strong> Soon, you'll be able to use our <strong>Energy Management Light tool</strong> as an easy entry point into digital energy management.</p>
-                    <p><strong>Scalable Integration:</strong> Your systems evolve, and so do our solutions. Start small and add on as your needs grow—whether it’s more advanced reporting, compliance management, or integrating new data sources.</p>
-                    <p><strong>Continuous Improvement:</strong> We don't just implement and leave; we help optimize your systems as they grow. From initial implementation to advanced ESG reporting, our modular components evolve with your requirements.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Call to Action Section -->
-    <section id="cta" class="text-center bg-dark text-white py-5">
-        <div class="container">
-            <h2 class="text-white">Ready to Improve Your ESG and Energy Management?</h2>
-            <p class="lead text-white">Schedule a free consultation today to discuss your goals and how I can help you achieve them.</p>
-            <a href="https://calendly.com/yves-deutschmann-evergreensummitds/30min" class="btn btn-primary btn-lg">Schedule a free Consultation</a>
-        </div>
-    </section>
-
-    <!-- Testimonial Section -->
-    <section id="testimonials" class="container my-5">
-        <h2 class="text-center">What Clients Say</h2>
-        <div id="testimonial-container" class="row justify-content-center"></div>
-    </section>
-    
     <script>
         const BASE_URL = "https://evergreensummitds.com/";
         fetch(`${BASE_URL}testimonials.json`)
@@ -273,7 +259,166 @@
             })
             .catch(error => console.error(`Error fetching JSON: ${error}`));
     </script>
+
+    <!-- Pain & Solution Section -->
+    <section id="challenges" class="container my-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+                <h2 class="text-center mb-4">Common Challenges & How We Solve Them</h2>
+                <div class="row align-items-center">
+
+                    <div class="challenges-solutions">
+                        <div class="challenges">❌ Energy Costs Keep Rising</div>
+                        <div class="arrow"> → </div>
+                        <div class="solutions">✅ Cut costs with targeted, data-driven savings</div>
+                        <div class="challenges">❌ ESG Compliance is Confusing</div>
+                        <div class="arrow"> → </div>
+                        <div class="solutions">✅ Automate reporting & stay ahead of regulations</div>
+                        <div class="challenges">❌ No Time or Budget for Big Systems</div>
+                        <div class="arrow"> → </div>
+                        <div class="solutions">✅ Modular solutions - no need for expensive software</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works section -->
+    <section id="process" class="container my-5">
+        <div class="row">
+            <dic class="col-md-8 mx-auto text-start">
+                <h2 class="text-center mb-4">Here’s How We Make It Easy for You</h2>
+                <ul style="list-style: decimal; padding: 0;">
+                    <li> <strong>Book a Free Consultation</strong> - Choose a time that works for you.</li>
+                    <li> <strong>Get Expert Insights</strong> - In 30 minutes, we’ll assess your biggest cost drivers & compliance gaps.</li>
+                    <li> <strong>Receive a Roadmap</strong> - After the call, I’ll outline clear next steps for energy savings & compliance improvements.</li>
+                </ul>
+                <p>
+                    <strong>
+                        Whether you're just starting or optimizing an existing system, our solutions are designed to be cost-effective and grow with your needs.
+                    </strong>
+                </p>
+            </dic>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <h2>No sales pitch—just an honest conversation about your energy challenges.</h2>
+            <a href="https://calendly.com/yves-deutschmann-evergreensummitds/30min" class="cta-button">Schedule a free Consultation</a>
+        </div>
+    </section>
     
+    <section id="faq" class="container my-5">
+        <div class="row">
+            <div class="col-md-12 mx-auto text-center">
+                <h2 class="text-center mb-4">❓ Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <button class="faq-question">I don’t have detailed energy tracking - can this still help?</button>
+                    <div class="faq-answer">
+                        <p>
+                            Yes! Many companies don’t have full visibility into their energy consumption. 
+                            I use industry benchmarks and data from similar facilities to provide initial insights. 
+                            If you have any available data, great—but if not, we can still outline the first steps to improving efficiency.
+                        </p>
+                    </div>
+                
+                    <button class="faq-question">How can I use my existing data collection tools to support an energy management system?</button>
+                    <div class="faq-answer">
+                        <p>
+                            Leveraging existing tools can be a cost-effective way to start with energy management. 
+                            With my remote energy management service, I help clients make the most of their current technology by 
+                            identifying the data sources already available, such as utility bills, production data, or IoT sensors, 
+                            and integrating them into a comprehensive energy management strategy. 
+                            The key is to ensure data consistency and convert it into actionable insights, 
+                            allowing you to track energy performance and make informed decisions.
+                        </p>
+                    </div>
+                
+                    <button class="faq-question">What are common pitfalls during energy efficiency project implementations, and how can they be avoided?</button>
+                    <div class="faq-answer">
+                        <p>
+                            A frequent pitfall is not having clear, quantifiable objectives or failing to engage stakeholders. 
+                            My approach includes setting measurable targets, developing an action plan, and engaging with your team from day one to foster collaboration. 
+                            By acting as a remote partner, I provide ongoing support to ensure actions are implemented smoothly, 
+                            including monitoring progress and adjusting the strategy as needed.
+                        </p>
+                    </div>
+
+                    <button class="faq-question">How do I integrate energy management practices without disrupting daily operations?</button>
+                    <div class="faq-answer">
+                        <p>
+                            Integration can be seamless when energy management aligns with your core business processes. 
+                            As a fractional energy manager, I work around your business schedule to collect data, 
+                            conduct audits, and recommend efficiency measures that can be phased in during maintenance or low-production periods. 
+                            My aim is to minimize disruptions while maximizing efficiency gains.
+                        </p>
+                    </div>
+                    
+                    <button class="faq-question">How detailed does my energy audit need to be for meaningful action?</button>
+                    <div class="faq-answer">
+                        <p>
+                            The level of detail depends on your objectives and available resources. 
+                            A high-level audit may identify quick wins, but a more detailed audit will uncover deeper opportunities for long-term savings. 
+                            With my services, I tailor the audit depth based on your needs, offering a scalable approach—starting with a basic assessment 
+                            and gradually moving towards more detailed analysis as your energy strategy matures.
+                        </p>
+                    </div>
+                    
+                    <button class="faq-question">What specific metrics should I track to ensure continuous improvement in energy usage?</button>
+                    <div class="faq-answer">
+                        <p>
+                            The key metrics will vary, but typical ones include energy consumption per unit of production, peak energy demand, 
+                            and specific energy use by different areas (e.g., lighting, HVAC, machinery). 
+                            My remote services help establish relevant KPIs tailored to your industry, set baselines, and implement tracking dashboards, 
+                            allowing you to monitor your progress and adjust as needed.
+                        </p>
+                    </div>
+
+                    <button class="faq-question">What steps can I take to gain buy-in from employees for energy-saving initiatives?</button>
+                    <div class="faq-answer">
+                        <p>
+                            Successful energy management often requires cultural change. 
+                            I provide materials and workshops that help communicate the importance of energy management to staff, 
+                            highlighting how everyone benefits from increased efficiency. 
+                            Engaging employees with clear messaging and celebrating small successes can foster enthusiasm and participation across your organization.
+                        </p>
+                    </div>
+
+                    <button class="faq-question">How do I determine if my SME qualifies for specific energy grants or subsidies?</button>
+                    <div class="faq-answer">
+                        <p>
+                            Navigating grants and subsidies can be challenging, but I help clients identify and apply for relevant incentives. 
+                            Through my energy management consulting, I keep up with local, state, and federal opportunities, ensuring you leverage every possible advantage. 
+                            I provide guidance on eligibility, documentation, and how to align energy projects with available funding programs.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const questions = document.querySelectorAll(".faq-question");
+    
+            questions.forEach((question) => {
+                question.addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    const answer = this.nextElementSibling;
+                    
+                    if (answer.style.display === "block") {
+                        answer.style.display = "none";
+                    } else {
+                        answer.style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+
     <!-- Footer -->
     <footer class="footer py-1 text-center">
         <p>&copy; <script>document.write(new Date().getFullYear());</script> EverGreen Summit Data Solutions. All rights reserved.</p>
